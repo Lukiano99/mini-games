@@ -1,0 +1,105 @@
+.challenge-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 200px;
+  border: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.challenge-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.challenge-item {
+  width: 120px;
+  height: 120px;
+  border: 3px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  transition: 0.15s ease;
+}
+
+.challenge-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 30px black;
+  transition: 0.15s ease;
+}
+.item {
+  width: 40px;
+  height: 40px;
+  color: black;
+}
+.success{
+  border-color: rgba(0, 0, 0, 0.383);
+  color: rgba(0, 0, 0, 0.383);
+}
+.header {
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progressBar {
+  border-radius: 30px;
+  position: fixed;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25%;
+  height: 20px; /* prilagodite visinu prema potrebama */
+  background-color: #ffffff; /* boja pozadine */
+  color: #000; /* boja teksta */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Dodato da bi se crte postavile između nivoa */
+  overflow: hidden;
+}
+
+.level-indicator {
+  height: 100%;
+  width: calc(20% - 4px); /* 100% / 5 nivoa = 20% za svaki nivo, oduzima 4px za razmak između nivoa */
+  background-color: #3498db; /* boja nivoa */
+  position: relative;
+}
+
+.level-indicator::before {
+  content: '';
+  position: absolute;
+  height: 50%;
+  width: 1px;
+  top: 25%; /* Položaj crte u sredini nivoa */
+  right: 0;
+}
+
+.button {
+  height: 50px;
+  width: 150px;
+  border: 2px solid black;
+  border-radius: 30px;
+  background-color: transparent;
+  font-size: large;
+  transition: 0.1s ease;
+}
+.button:hover {
+  transform: scale(1.1); /* Povećava veličinu dugmeta na 110% pri hoveru */
+}
+.button:active {
+  transform: scale(
+    0.9
+  ); /* Skalira dugme na 90% originalne veličine prilikom klika */
+  /* Dodajte druge stilove za vizuelnu indikaciju klika, na primer, promenu boje pozadine ili sjenčanje */
+  background-color: #e0e0e0;
+}
+.center {
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
