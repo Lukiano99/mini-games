@@ -10,7 +10,7 @@ const ProgressBar = () => {
           key={level.id}
           className="level-indicator"
           style={{
-            backgroundColor: level.status === "success" ? "#2ecc71" : "#252525",
+            backgroundColor: level.status === "success" ? "#2ecc71" : "#3a3a3ac7",
           }}
         ></div>
       ))}

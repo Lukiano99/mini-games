@@ -1,0 +1,16 @@
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.backDiv {
+  align-items: center;
+  font-size: 25px;
+}
+
+.titleDiv {
+    margin-left: 400px;
+    margin-right    : 400px;
+}
