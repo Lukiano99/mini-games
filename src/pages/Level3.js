@@ -8,51 +8,42 @@ const Level3 = ({ gameId }) => {
   const [selectedAnswer, setSelectedAnswer] = useState(null);
   const [isCorrect, setIsCorrect] = useState(null);
   const [showFeedback, setShowFeedback] = useState(false);
-  const [feedback, setFeedback] = useState("Pogresan odgovor. Probaj ponovo!");
   const questions = useSelector((state) => state.quizQuestions);
-
-  const handleAnswerClick = (index) => {
-    setSelectedAnswer(index);
-  };
 
   const dispatch = useDispatch();
 
-  let feedBack = (
-    <h2 className="feedback">{feedback}</h2>
-  );
+  let feedback;
 
-  const handleNextQuestion = () => {
+  switch (isCorrect) {
+    case true:
+      feedback = <h2 className="feedback">Tacno!</h2>;
+      break;
+    case false:
+      feedback = <h2 className="feedback">Pogresan odgovor. Probaj ponovo!</h2>;
+      break;
+    default:
+      feedback = <h2 className="feedback"> </h2>;
+  }
+
+  const handleAnswer = () => {
     // Provera tačnosti odgovora, a zatim prelazak na sledeće pitanje
-    if (selectedAnswer !== null) {
-      const correct =
-        selectedAnswer === questions[currentQuestion].correctAnswer;
-      setIsCorrect(correct);
-      setShowFeedback(true);
+    const correct = selectedAnswer === questions[currentQuestion].correctAnswer;
+    setIsCorrect(correct);
+    setShowFeedback(true);
 
+    setTimeout(() => {
       if (correct) {
         if (currentQuestion + 1 < questions.length) {
-          setFeedback("Tacno!");
-          setTimeout(() => {
-            setCurrentQuestion((prevQuestion) => prevQuestion + 1);
-            setSelectedAnswer(null);
-            setShowFeedback(true);
-            setShowFeedback(false);
-          }, 1000);
+          setCurrentQuestion((prev) => prev + 1);
+          setSelectedAnswer(null);
+          setShowFeedback(false);
         } else {
           dispatch(gameActions.levelCompleted(gameId));
         }
       } else {
-        setFeedback("Pogresan odgovor. Probaj ponovo!");
-        setTimeout(() => {
-          setShowFeedback(false);
-        }, 1000);
-      }
-    } else {
-      setShowFeedback(true);
-      setTimeout(() => {
         setShowFeedback(false);
-      }, 1000);
-    }
+      }
+    }, 1000);
   };
 
   return (
@@ -63,7 +54,7 @@ const Level3 = ({ gameId }) => {
           <div
             className={`option ${selectedAnswer === index ? "active" : ""}`}
             key={index}
-            onClick={() => handleAnswerClick(index)}
+            onClick={() => setSelectedAnswer(index)}
           >
             {option}
           </div>
@@ -71,11 +62,11 @@ const Level3 = ({ gameId }) => {
       </div>
       <div className="submit">
         {!showFeedback && (
-          <button className="quizButton" onClick={handleNextQuestion}>
-            SUBMIT
+          <button className="quizButton" onClick={handleAnswer}>
+            POTVRDI
           </button>
         )}
-        {showFeedback && feedBack}
+        {showFeedback && feedback}
       </div>
     </div>
   );
