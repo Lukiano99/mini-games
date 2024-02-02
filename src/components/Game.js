@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 // import { gameActions } from "../store/GameStore";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import SuccessMessage from "./LevelPassedMessage";
 import Level1 from "../pages/Level1";
 import Level2 from "../pages/Level2";
@@ -22,27 +22,27 @@ const Game = () => {
   const gameId = params.levelId.replace("level", "");
   const isSuccess = levels[gameId - 1].status === "success";
   const gameName = levels[gameId - 1].name;
-
+  const navigate = useNavigate();
   let levelComponent;
 
   switch (gameId) {
     case "1":
-      levelComponent = <Level1 gameId={gameId}/>; // Word search
+      levelComponent = <Level1 gameId={gameId} />; // Word search
       break;
     case "2":
-      levelComponent = <Level2 gameId={gameId}/>; // Cypher
+      levelComponent = <Level2 gameId={gameId} />; // Cypher
       break;
     case "3":
-      levelComponent = <Level3 gameId={gameId}/>; // Quiz
+      levelComponent = <Level3 gameId={gameId} />; // Quiz
       break;
     case "4":
-      levelComponent = <Level4 gameId={gameId}/>; // Memory game
+      levelComponent = <Level4 gameId={gameId} />; // Memory game
       break;
     case "5":
-      levelComponent = <Level5 gameId={gameId}/>; // A puzzle question
+      levelComponent = <Level5 gameId={gameId} />; // A puzzle question
       break;
     default:
-      levelComponent = <Level1 gameId={gameId}/>;
+      levelComponent = <Level1 gameId={gameId} />;
   }
 
   // function handleLevelComplete() {
@@ -56,6 +56,9 @@ const Game = () => {
           <FontAwesomeIcon
             icon="fa-solid fa-chevron-left"
             className="backButton"
+            onClick={() => {
+              navigate("/");
+            }}
           />
         </div>
         <div className="titleDiv">
