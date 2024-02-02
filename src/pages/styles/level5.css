@@ -1,0 +1,47 @@
+.gameDiv {
+  margin-top: 200px;
+  height: 300px;
+}
+.box-grid {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  border: 3px solid #cecfce;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  transition: 0.15s ease;
+  font-size: xxx-large;
+}
+
+.box:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 0px 30px #ffffff62;
+  transition: 0.15s ease;
+}
+.item {
+  width: 40px;
+  height: 40px;
+  color: #cecfce;
+}
+
+.header {
+  text-align: "center";
+}
+.puzzle-question {
+  margin-bottom: 70px;
+}
+
+.feedback {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: medium;
+}
