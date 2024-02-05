@@ -1,0 +1,71 @@
+.gameDiv {
+  margin-top: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header {
+  text-align: "center";
+}
+
+.message {
+  color: #01cf03;
+  background-color: black;
+  width: 350px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  text-shadow: #01cf03 1px 0 8px;
+    }
+
+.encryptedMessage {
+  font-weight: lighter;
+}
+
+.inputDiv {
+  display: flex;
+
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.inputArea {
+  width: 300px;
+  height: 70px;
+
+  justify-content:center;
+  align-items: center;
+
+  background-color: #393939a1;
+  color: #8f8f8f;
+
+  border: 1px solid white;
+  border-radius: 10px;
+
+  font-size: large;
+}
+
+.submitButton {
+    background-color: #f1c40f;
+    padding: "10px";
+    margin-top: "10px";
+    width: auto;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    transition: all 0.2s ease;
+    cursor: pointer;
+  }
+  .submitButton:hover {
+    background-color: #cecfce;
+    transform: scale(1.05);
+  }
+  .checkButton {
+  justify-content: center;
+  display: flex;
+  margin-top: 10px;
+  }
