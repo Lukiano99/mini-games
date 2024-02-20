@@ -18,7 +18,7 @@
   justify-content: center;
   border-radius: 10px;
   text-shadow: #01cf03 1px 0 8px;
-    }
+}
 
 .encryptedMessage {
   font-weight: lighter;
@@ -34,7 +34,7 @@
   width: 300px;
   height: 70px;
 
-  justify-content:center;
+  justify-content: center;
   align-items: center;
 
   background-color: #393939a1;
@@ -47,25 +47,28 @@
 }
 
 .submitButton {
-    background-color: #f1c40f;
-    padding: "10px";
-    margin-top: "10px";
-    width: auto;
-    height: 40px;
-    border: none;
-    border-radius: 10px;
-    justify-content: center;
-    align-items: center;
-    display: flex;
-    transition: all 0.2s ease;
-    cursor: pointer;
-  }
-  .submitButton:hover {
-    background-color: #cecfce;
-    transform: scale(1.05);
-  }
-  .checkButton {
+  background-color: #f1c40f;
+  padding: "10px";
+  margin-top: "10px";
+  width: auto;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.submitButton:hover {
+  background-color: #cecfce;
+  transform: scale(1.05);
+}
+.checkButton {
   justify-content: center;
   display: flex;
   margin-top: 10px;
-  }
+}
+.feedback {
+  height: 40px;
+}

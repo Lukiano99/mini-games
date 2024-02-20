@@ -8,7 +8,7 @@ const Level5 = ({ gameId }) => {
   const boxes = [false, false, false, false, false];
   const emojis = ["🌹", "🗺️", "🌞", "📖", "🛩️"];
   const question =
-    "Imam gradove, ali ne i kuće. Imam planine, ali ne drveće. Imam vodu, ali ne i ribu. Šta sam ja?";
+    "I have cities, but no houses. I have mountains, but no trees. I have water, but no fish. What am I";
   const correctAnswer = 1;
   const [isCorrect, setIsCorrect] = useState(false);
   const [showFeedback, setShowFeedbac] = useState(false);
@@ -17,10 +17,10 @@ const Level5 = ({ gameId }) => {
   let feedback;
   switch (isCorrect) {
     case true:
-      feedback = <h2 className="feedback">Tacno!</h2>;
+      feedback = <h2 className="feedback">Correct!</h2>;
       break;
     case false:
-      feedback = <h2 className="feedback">Pogresan odgovor. Probaj ponovo!</h2>;
+      feedback = <h2 className="feedback">Wrong answer. Try again!</h2>;
       break;
     default:
       feedback = <h2 className="feedback"> </h2>;
@@ -52,9 +52,7 @@ const Level5 = ({ gameId }) => {
           </div>
         ))}
       </div>
-      {showFeedback && (
-          <p className="feedback">{feedback}</p>
-      )}
+      {showFeedback && <p className="feedback">{feedback}</p>}
     </div>
   );
 };
